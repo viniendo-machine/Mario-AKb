@@ -7,9 +7,10 @@ kaboom({
     fullscreen: true,
     scale: 1,
     debug: true,
-    background: [0,0,0]
+    clearColor: [0,0,0]
 
 })
+
 
 loadRoot('https://i.imgur.com/')
 loadSprite('coin','wbKxhcd.png')
@@ -27,7 +28,7 @@ loadSprite('pipe-topple-bottom-right','nqQ79eI.png')
 
 
 
-screen("game",()=>{
+scene("game",() => {
     layers(['bg','obj','ui'], 'obj')
     const map = [
         '                                          ',
