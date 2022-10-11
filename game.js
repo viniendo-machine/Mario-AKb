@@ -109,16 +109,26 @@ scene("game",() => {
     // have to explicitly define the height of mario 
     // to ensure it's just above the brick
     keyPress('space', ()=>{
-        // if(player.pos.y==180){
-        //     // player.jump(JUMP_FORCE)
-        //     player.pos.y = player.pos.y - 20
-        //     wait(0.1)
-        //     player.pos.y = player.pos.y - 20
-        // }
-        if (player.grounded()){
-            player.jump() 
+        if(player.pos.y==180){
+            // player.jump(JUMP_FORCE)
+            moveUp()
+            wait(0.1, ()=>{
+                moveDown()
+            })
         }
+        // if (player.grounded()){
+        //     player.jump() 
+        // }
 })
+
+function moveUp(){
+    player.pos.y = player.pos.y - 40
+
+}
+
+function moveDown(){
+    player.pos.y = player.pos.y + 40
+}
 
     
     console.log(player.pos.x)
